@@ -11,6 +11,9 @@ const Template: Story<ButtonT & Partial<StyledButtonT>> = ({ ...args }) => {
 export const Default = Template.bind({});
 Default.args = {
   text: 'Click me!',
+  loading: false,
+  disabled: false,
+  icon: '',
 };
 
 export default {

@@ -6,7 +6,12 @@ import pxToRem from '../../utils/pxToRem';
 import { StyledButtonT } from './button.type';
 
 const variantStyles: CustomStylesT = {
-  primary: {},
+  primary: {
+    backgroundColor: '#1f61f7',
+    color: '#fff',
+    fontWeight: '',
+    border: 'none',
+  },
   outline: {},
   text: {},
 };
@@ -26,6 +31,21 @@ const sizeStyles: CustomStylesT = {
   xlarge: {},
 };
 
+const iconPositionStyles: CustomStylesT = {
+  left: {
+    flexDirection: 'row',
+    '& > img, & > i, & > svg': {
+      marginRight: pxToRem(4),
+    },
+  },
+  right: {
+    flexDirection: 'row-reverse',
+    '& > img, & > i, & > svg': {
+      marginRight: pxToRem(4),
+    },
+  },
+};
+
 const StyledButton = styled.button<StyledButtonT>(
   {
     appearance: 'none',
@@ -41,14 +61,17 @@ const StyledButton = styled.button<StyledButtonT>(
     fontFamily: 'inherit',
     width: 'fit-content',
   },
-  {
-    boxShadow: 'none',
-    cursor: 'not-allowed',
-    color: '#AFBACC',
-  },
   ({ variant }) => variantStyles[variant],
   ({ size }) => sizeStyles[size],
-  ({ loading }) => ({ cursor: loading ? 'not-allowed' : 'pointer' })
+  ({ loading }) => ({
+    cursor: loading ? 'not-allowed' : 'pointer',
+    '&:disabled': {
+      boxShadow: 'none',
+      cursor: 'not-allowed',
+      color: '#AFBACC',
+    },
+  }),
+  ({ iconPosition }) => iconPositionStyles[iconPosition]
 );
 
 export default StyledButton;

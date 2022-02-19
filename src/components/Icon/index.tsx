@@ -1,9 +1,28 @@
-import StyledIcon from './Icon.css';
-import { IconT } from './Icon.type';
+import classNames from 'classnames';
 
-const Icon = ({ id, name, className }: IconT) => {
+import StyledIcon from './Icon.css';
+import { IconT, StlyedIconT } from './Icon.type';
+
+const Icon = ({
+  id,
+  name,
+  className,
+  onClick,
+  variant = 'default',
+  size = 'medium',
+  withBg = false,
+  disabled = false,
+}: IconT & Partial<StlyedIconT>) => {
+  const iconProps = { variant, size, withBg, disabled };
+  const iconClassNames = classNames('material-icons', className);
+
   return (
-    <StyledIcon id={id} className={className}>
+    <StyledIcon
+      id={id}
+      className={iconClassNames}
+      onClick={onClick}
+      {...iconProps}
+    >
       {name}
     </StyledIcon>
   );

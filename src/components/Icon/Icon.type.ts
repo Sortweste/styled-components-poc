@@ -1,3 +1,5 @@
+import { MouseEvent } from 'react';
+
 export type IconT = {
   /**
    * Declares id attribute
@@ -12,4 +14,31 @@ export type IconT = {
    * Declares classes to customize the icon element
    */
   className?: string;
+};
+
+export type StlyedIconT = {
+  /**
+   * Declares variant attribute
+   * Default value: default
+   */
+  variant: 'primary' | 'secondary' | 'default';
+  /**
+   * Declares size attribute
+   * Default value: medium
+   */
+  size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+  /**
+   * Declares disabled state.
+   * Default value: false
+   * */
+  disabled: boolean;
+  /**
+   * Declares if the icon has bg.
+   * Default value: false
+   * */
+  withBg: boolean;
+  /**
+   * Declares click function.
+   * */
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 };

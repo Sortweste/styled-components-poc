@@ -15,11 +15,6 @@ export type ButtonT = {
    */
   icon?: string;
   /**
-   * Declares icon position atrribute
-   * Default value: left
-   */
-  iconPosition?: 'left' | 'right';
-  /**
    * Declares disable state
    * Default value: false
    */
@@ -54,4 +49,9 @@ export type StyledButtonT = {
    * Default value: false
    */
   loading: boolean;
+  /**
+   * Declares icon position atrribute
+   * Default value: left
+   */
+  iconPosition: 'left' | 'right';
 };

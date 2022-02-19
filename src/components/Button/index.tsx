@@ -20,7 +20,12 @@ const Button = ({
   const buttonProps = { id, className, variant, loading, size, onClick };
 
   return (
-    <StyledButton disabled={disabled || loading} type="button" {...buttonProps}>
+    <StyledButton
+      iconPosition={iconPosition}
+      disabled={disabled || loading}
+      type="button"
+      {...buttonProps}
+    >
       {loading ? (
         <CircularLoader size={size} variant={parseVariants(variant)} />
       ) : (
