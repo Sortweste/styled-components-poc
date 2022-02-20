@@ -1,6 +1,8 @@
-import styled, { CSSObject } from 'styled-components';
+import styled from 'styled-components';
 
 import { CustomStylesT } from '../../types/generic';
+import createStyledComponent from '../../utils/createStyledComponent';
+import createStyles from '../../utils/createStyles';
 import pxToRem from '../../utils/pxToRem';
 import { StlyedIconT } from './Icon.type';
 
@@ -9,62 +11,67 @@ const variantStyles: CustomStylesT = {
     color: '#060b25',
   },
   primary: {
-    color: '',
+    color: '#1f61f7',
   },
   secondary: {
-    color: '',
+    color: '#fff',
   },
 };
 
 const sizeStyles: CustomStylesT = {
   xsmall: {
-    fontSize: '',
+    fontSize: pxToRem(16),
   },
   small: {
-    fontSize: '',
+    fontSize: pxToRem(20),
   },
   medium: {
-    fontSize: '',
+    fontSize: pxToRem(24),
   },
   large: {
-    fontSize: '',
+    fontSize: pxToRem(28),
   },
   xlarge: {
-    fontSize: '',
+    fontSize: pxToRem(32),
   },
 };
 
-const disabledStyles: CSSObject = {
-  color: '',
+const disabledStyles = createStyles({
+  color: '#AFBACC',
   cursor: 'not-allowed',
-};
+});
 
-const withBgStyles: CSSObject = {
+const withBgStyles = createStyles({
   padding: pxToRem(4),
   boxSizing: 'border-box',
   borderRadius: '50%',
-  backgroundColor: '',
-};
+  backgroundColor: '#EBEFF5',
+});
 
-const iconClickStyles: CSSObject = {
+const iconClickStyles = createStyles({
   cursor: 'pointer',
-  // '& .${withBgStyles}': {
-  //   '&:hover': {
-  //     '@media (hover:hover)': {
-  //       backgroundColor: '',
-  //     },
-  //   },
+  // [`& ${JSON.stringify(withBgStyles)}:hover`]: {
+  //   backgroundColor: '#DDE3ED',
   // },
+});
+
+const addCustomChange = () => {
+  withBgStyles[':hover'] = {
+    backgroundColor: '#DDE3ED',
+  };
 };
 
 const StyledIcon = styled.i<StlyedIconT>(
-  ({ variant, size, disabled, withBg, onClick }) => ({
-    ...variantStyles[variant],
-    ...sizeStyles[size],
-    ...(disabled && disabledStyles),
-    ...(withBg && withBgStyles),
-    ...(!!onClick && iconClickStyles),
-  })
+  ({ variant, size, disabled, withBg, onClick }) => {
+    !!onClick && withBg && addCustomChange(); // todo: remove hover event :( Lo estoy agregando, no condicionando
+    return {
+      ...variantStyles[variant],
+      ...sizeStyles[size],
+      ...(disabled && disabledStyles),
+      ...(withBg && withBgStyles),
+      ...(!!onClick && iconClickStyles),
+    };
+  }
 );
 
 export default StyledIcon;
