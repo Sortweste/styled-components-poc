@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 
 import StyledIcon from './Icon.css';
-import { IconT, StlyedIconT } from './Icon.type';
+import { IconT, StyledIconT } from './Icon.type';
 
 const Icon = ({
   id,
@@ -12,7 +12,7 @@ const Icon = ({
   size = 'medium',
   withBg = false,
   disabled = false,
-}: IconT & Partial<StlyedIconT>) => {
+}: IconT & Partial<StyledIconT>) => {
   const iconProps = { variant, size, withBg, disabled };
   const iconClassNames = classNames('material-icons', className);
 

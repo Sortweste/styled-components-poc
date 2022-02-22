@@ -1,9 +1,9 @@
 import { Story } from '@storybook/react';
 
 import Icon from '.';
-import { IconT, StlyedIconT } from './Icon.type';
+import { IconT, StyledIconT } from './Icon.type';
 
-const Template: Story<IconT & Partial<StlyedIconT>> = ({ ...args }) => {
+const Template: Story<IconT & Partial<StyledIconT>> = ({ ...args }) => {
   return <Icon {...args} />;
 };
 
@@ -17,5 +17,14 @@ Default.args = {
 export default {
   title: 'Icon',
   component: Default,
-  argTypes: {},
+  argTypes: {
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: { type: 'select' },
+    },
+    variant: {
+      options: ['default', 'primary', 'secondary'],
+      control: { type: 'select' },
+    },
+  },
 };

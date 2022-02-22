@@ -16,7 +16,7 @@ export type IconT = {
   className?: string;
 };
 
-export type StlyedIconT = {
+export type StyledIconVariantT = {
   /**
    * Declares variant attribute
    * Default value: default
@@ -27,6 +27,9 @@ export type StlyedIconT = {
    * Default value: medium
    */
   size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+};
+
+export type StyledIconT = {
   /**
    * Declares disabled state.
    * Default value: false
@@ -41,4 +44,4 @@ export type StlyedIconT = {
    * Declares click function.
    * */
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
-};
+} & StyledIconVariantT;
