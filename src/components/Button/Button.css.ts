@@ -112,7 +112,8 @@ const StyledButton = styled.button<StyledButtonT>(
     '&:disabled': {
       boxShadow: 'none',
       cursor: 'not-allowed',
-      color: '#AFBACC',
+      color: '#afbacc',
+      backgroundColor: '#ebeff5',
     },
   }),
   ({ iconPosition }) => iconPositionStyles[iconPosition]
