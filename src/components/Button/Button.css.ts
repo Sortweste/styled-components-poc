@@ -8,12 +8,24 @@ import { StyledButtonT } from './button.type';
 const variantStyles: CustomStylesT = {
   primary: {
     backgroundColor: '#1f61f7',
-    color: '#fff',
-    fontWeight: '',
+    color: '#ffffff',
+    fontWeight: fontWeight.bold,
     border: 'none',
   },
-  outline: {},
-  text: {},
+  outline: {
+    backgroundColor: '#FFFFFF',
+    color: '#060b25',
+    fontWeight: fontWeight.medium,
+    border: `${pxToRem(1)} solid #dde3ed`,
+    boxShadow: 'none',
+  },
+  text: {
+    backgroundColor: '#FFFFFF',
+    color: '#1f61f7',
+    fontWeight: fontWeight.medium,
+    border: `none`,
+    boxShadow: 'none',
+  },
 };
 
 const sizeStyles: CustomStylesT = {
@@ -24,11 +36,43 @@ const sizeStyles: CustomStylesT = {
     minWidth: pxToRem(72),
     height: pxToRem(32),
     padding: `${pxToRem(8)} ${pxToRem(12)}`,
-    boxShadow: 'none',
+    boxShadow: `${pxToRem(0)} ${pxToRem(4)} ${pxToRem(
+      12
+    )} rgba(18, 25, 84, 0.07)`,
   },
-  medium: {},
-  large: {},
-  xlarge: {},
+  medium: {
+    fontSize: pxToRem(14),
+    lineHeight: pxToRem(24),
+    fontWeight: fontWeight.medium,
+    minWidth: pxToRem(96),
+    height: pxToRem(40),
+    padding: `${pxToRem(8)} ${pxToRem(16)}`,
+    boxShadow: `${pxToRem(0)} ${pxToRem(6)} ${pxToRem(
+      14
+    )} rgba(18, 25, 84, 0.07)`,
+  },
+  large: {
+    fontSize: pxToRem(16),
+    lineHeight: pxToRem(32),
+    fontWeight: fontWeight.medium,
+    minWidth: pxToRem(128),
+    height: pxToRem(48),
+    padding: `${pxToRem(8)} ${pxToRem(20)}`,
+    boxShadow: `${pxToRem(0)} ${pxToRem(10)} ${pxToRem(
+      16
+    )} rgba(18, 25, 84, 0.07)`,
+  },
+  xlarge: {
+    fontSize: pxToRem(20),
+    lineHeight: pxToRem(40),
+    fontWeight: fontWeight.medium,
+    minWidth: pxToRem(160),
+    height: pxToRem(56),
+    padding: `${pxToRem(8)} ${pxToRem(24)}`,
+    boxShadow: `${pxToRem(0)} ${pxToRem(10)} ${pxToRem(
+      16
+    )} rgba(18, 25, 84, 0.07)`,
+  },
 };
 
 const iconPositionStyles: CustomStylesT = {
