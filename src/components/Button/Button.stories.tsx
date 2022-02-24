@@ -19,5 +19,14 @@ Default.args = {
 export default {
   title: 'Button',
   component: Default,
-  argTypes: {},
+  argTypes: {
+    size: {
+      options: ['small', 'medium', 'large', 'xlarge'],
+      control: { type: 'select' },
+    },
+    variant: {
+      options: ['primary', 'outline', 'text'],
+      control: { type: 'select' },
+    },
+  },
 };
