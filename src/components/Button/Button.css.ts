@@ -101,7 +101,7 @@ const StyledButton = styled.button<StyledButtonT>(
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: pxToRem(24),
+    borderRadius: pxToRem(50),
     fontFamily: 'inherit',
     width: 'fit-content',
   },
